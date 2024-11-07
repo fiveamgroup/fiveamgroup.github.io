@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fiveamgroup/fiveamgroup.github.io/static/css/main.e842aea6.css",
+    "main.js": "/fiveamgroup/fiveamgroup.github.io/static/js/main.122fb98a.js",
+    "static/js/453.bb828c5d.chunk.js": "/fiveamgroup/fiveamgroup.github.io/static/js/453.bb828c5d.chunk.js",
+    "index.html": "/fiveamgroup/fiveamgroup.github.io/index.html",
+    "main.e842aea6.css.map": "/fiveamgroup/fiveamgroup.github.io/static/css/main.e842aea6.css.map",
+    "main.122fb98a.js.map": "/fiveamgroup/fiveamgroup.github.io/static/js/main.122fb98a.js.map",
+    "453.bb828c5d.chunk.js.map": "/fiveamgroup/fiveamgroup.github.io/static/js/453.bb828c5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e842aea6.css",
+    "static/js/main.122fb98a.js"
+  ]
+}
