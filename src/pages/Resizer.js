@@ -63,7 +63,7 @@ function Resizer() {
         
         {imagePreview && (
           <div className="image-preview-container">
-            <img src={imagePreview} alt="Uploaded Image" className="preview-image" />
+            <img src={imagePreview} alt="Uploaded resized  preview" className="preview-image" />
           </div>
         )}
         

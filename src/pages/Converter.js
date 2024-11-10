@@ -64,7 +64,7 @@ function Converter() {
 
         {imagePreview && (
           <div className="image-preview-container">
-            <img src={imagePreview} alt="Uploaded Image" className="preview-image" />
+            <img src={imagePreview} alt="Uploaded file" className="preview-image" />
           </div>
         )}
 
