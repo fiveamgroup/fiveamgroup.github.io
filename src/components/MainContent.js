@@ -33,6 +33,15 @@ function MainContent() {
             </div>
           </div>
         </div>
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">Image Cropper</h5>
+              <p className="card-text">Crop images [coming soon] </p>
+              <Link to="/" className="btn btn-primary">Go to Cropper</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

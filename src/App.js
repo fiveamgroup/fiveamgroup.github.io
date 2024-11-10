@@ -5,6 +5,7 @@ import './styles.css';
 import Resizer from './pages/Resizer';
 import Compressor from './pages/Compressor';
 import Converter from './pages/Converter';
+import ICropper from './pages/ICropper';
 import Homepage from './components/Homepage';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/resizer" element={<Resizer />} />
         <Route path="/compressor" element={<Compressor />} />
         <Route path="/converter" element={<Converter />} />
+        <Route path="/icropper" element={<ICropper />} />
       </Routes>
     </div>
   </Router>
