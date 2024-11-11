@@ -40,6 +40,7 @@ body {
     color: #E5E5E5;
     border: none;
     transition: transform 0.2s ease-in-out;
+    margin-bottom: 10px;
 }
 
 .card:hover {
@@ -79,39 +80,39 @@ footer a:hover {
 }
 
 .container {
-text-align: center;
-padding: 2rem;
-border-radius: 8px;
-background-color: #252539;
-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #252539;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-color: #b299e2;
+    color: #b299e2;
 }
 
 .btn-primary {
-background-color: #7a5cd6;
-border: none;
+    background-color: #7a5cd6;
+    border: none;
 }
 
 .btn-primary:hover {
-background-color: #644bb1;
+    background-color: #644bb1;
 }
 
 .download-btn {
-background-color: #7a5cd6;
-border: none;
-color: white;
-margin-top: 1rem;
-padding: 0.5rem 1rem;
-border-radius: 4px;
+    background-color: #7a5cd6;
+    border: none;
+    color: white;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
 .download-btn:hover {
-background-color: #644bb1;
+    background-color: #644bb1;
 }
-/* App.css */
+
 .tool-page {
     display: flex;
     flex-direction: column;
@@ -119,63 +120,55 @@ background-color: #644bb1;
     background-color: #1b1c29;
     color: #e0e0ff;
     font-family: Arial, sans-serif;
-  }
+}
   
 .content-container {
-flex: 1;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 20px;
-text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
 }
 
 h2 {
-font-size: 2rem;
-margin-bottom: 20px;
-color: #a77dff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #a77dff;
 }
 
 input[type="file"],
 input[type="number"],
 button {
-margin: 10px;
+    margin: 10px;
 }
 
 input[type="file"] {
-color: #e0e0ff;
+    color: #e0e0ff;
 }
 
 .action-button, .download-button {
-background-color: #6437a8;
-color: #e0e0ff;
-padding: 10px 20px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-weight: bold;
-margin-top: 20px;
+    background-color: #6437a8;
+    color: #e0e0ff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .action-button:hover, .download-button:hover {
-background-color: #a77dff;
-}
-
-.preview-image {
-max-width: 80%;
-margin-top: 20px;
-border: 2px solid #6437a8;
-border-radius: 5px;
+    background-color: #a77dff;
 }
 
 .download-button {
-display: inline-block;
-margin-top: 15px;
-text-decoration: none;
-padding: 10px 15px;
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    padding: 10px 15px;
 }
-/* App.css */
 
 /* Style the dropdown to fit the dark, purple-themed look */
 .format-select {
@@ -197,66 +190,31 @@ padding: 10px 15px;
   
 /* Add a custom arrow icon to match theme */
 .format-select::-ms-expand {
-display: none; /* Hide default arrow in IE */
-}
+    display: none; /* Hide default arrow in IE */
+    }
 
 .format-select::after {
-content: '▼';
-font-size: 0.8rem;
-color: #a77dff;
-position: absolute;
-right: 10px;
-top: 50%;
-transform: translateY(-50%);
-pointer-events: none;
+    content: '▼';
+    font-size: 0.8rem;
+    color: #a77dff;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 /* Hover and focus states */
 .format-select:hover {
-border-color: #a77dff;
+    border-color: #a77dff;
 }
 
 .format-select:focus {
-box-shadow: 0 0 5px 2px rgba(100, 55, 168, 0.5);
+    box-shadow: 0 0 5px 2px rgba(100, 55, 168, 0.5);
 }
-/* Style the file input button */
+
 input[type="file"] {
     display: none;
-}
-
-.file-label {
-display: inline-block;
-background-color: #6437a8;
-color: #e0e0ff;
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-font-weight: bold;
-transition: background-color 0.3s ease;
-}
-
-.file-label:hover {
-background-color: #a77dff;
-}
-
-/* Style for dimension input boxes */
-.dimension-input {
-background-color: #2c2f3f;
-color: #e0e0ff;
-border: 2px solid #6437a8;
-padding: 10px;
-border-radius: 5px;
-font-size: 1rem;
-font-weight: bold;
-width: 100%;
-max-width: 100px;
-margin: 10px;
-text-align: center;
-outline: none;
-}
-
-.dimension-input:focus {
-box-shadow: 0 0 5px 2px rgba(100, 55, 168, 0.5);
 }
 
 .file-label {
@@ -268,42 +226,48 @@ box-shadow: 0 0 5px 2px rgba(100, 55, 168, 0.5);
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-  }
-  
-  .file-label:hover {
-    background-color: #a77dff;
-  }
-  /* Style for image preview container */
+}
 
-  
-  .preview-image {
+.file-label:hover {
+    background-color: #a77dff;
+}
+
+/* Style for dimension input boxes */
+.dimension-input {
+    background-color: #2c2f3f;
+    color: #e0e0ff;
+    border: 2px solid #6437a8;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 100px;
+    margin: 10px;
+    text-align: center;
+    outline: none;
+}
+
+.dimension-input:focus {
+    box-shadow: 0 0 5px 2px rgba(100, 55, 168, 0.5);
+}
+.preview-image {
     max-width: 100%;
     height: auto;
     border: 2px solid #6437a8;
     border-radius: 5px;
     margin-top: 10px;
-  }
+}
 
-  .dimension-input-container {
+.dimension-input-container {
     display: flex; /* Ensures inputs stay next to each other */
     justify-content: center;
     gap: 10px; /* Space between the inputs */
     margin-top: 20px;
     flex-wrap: nowrap; /* Prevents wrapping of input boxes */
-  }
-  
-  .dimension-input {
-    background-color: #2e1a47; /* Dark background */
-    color: #fff; /* White text */
-    border: 1px solid #6437a8; /* Purple border */
-    border-radius: 5px;
-    padding: 10px;
-    width: 120px;
-    font-size: 16px;
-    max-width: 100%; /* Prevents input from becoming too wide */
-  }
+}
 
-  /* Dropdown for output format */
+/* Dropdown for output format */
 .format-dropdown {
     padding: 10px;
     font-size: 16px;
@@ -313,42 +277,70 @@ box-shadow: 0 0 5px 2px rgba(100, 55, 168, 0.5);
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
-  }
-  
-  .format-label {
+}
+
+.format-label {
     display: block;
     font-size: 18px;
     color: #e0e0ff;
     margin-top: 20px;
     font-weight: bold;
-  }
+}
 
 
-  /* Image cropper */
-  .crop-container {
+/* Image cropper */
+.crop-container {
     position: relative;
     width: 100%;
     height: 400px;
     background-color: #222;
-  }
-  
-  .controls {
+}
+
+.controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-  }
-  
-  .preview-section {
+}
+
+.preview-section {
     margin-top: 20px;
+}
+
+
+/* ExifViewerRemover.css */
+
+.exif-viewer-remover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a2e;
+    color: #d4d4f7;
+    min-height: 100vh;
   }
   
-  button, .download-button {
-    background-color: #6437a8;
-    color: #fff;
+  h2, h3 {
+    color: #a29bfe;
+    margin-bottom: 20px;
+  }
+  
+  .file-label {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4b4b5c;
+    color: #d4d4f7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .metadata-display {
+    margin-top: 20px;
+    background-color: #2a2a3b;
     padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
+    color: #e1e1e1;
+    max-width: 400px;
+    overflow: auto;
   }
-  

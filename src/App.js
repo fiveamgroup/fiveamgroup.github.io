@@ -7,6 +7,7 @@ import Compressor from './pages/Compressor';
 import Converter from './pages/Converter';
 import ICropper from './pages/ICropper';
 import Homepage from './components/Homepage';
+import ExifViewer from './pages/ExifViewer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/compressor" element={<Compressor />} />
         <Route path="/converter" element={<Converter />} />
         <Route path="/icropper" element={<ICropper />} />
+        <Route path="/exifviewer" element={<ExifViewer />} />
       </Routes>
     </div>
   </Router>

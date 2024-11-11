@@ -42,6 +42,15 @@ function MainContent() {
             </div>
           </div>
         </div>
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">Image Exif Viewer</h5>
+              <p className="card-text">View image EXIF data </p>
+              <Link to="/exifviewer" className="btn btn-primary">Go to Exif Viewer</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
