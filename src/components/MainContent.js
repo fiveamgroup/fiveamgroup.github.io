@@ -51,6 +51,15 @@ function MainContent() {
             </div>
           </div>
         </div>
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">Image Color Picker</h5>
+              <p className="card-text">Pick image colors [coming soon] </p>
+              <Link to="/colorpicker" className="btn btn-primary">Go to Color Picker</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

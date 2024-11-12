@@ -10,7 +10,6 @@ function ICropper() {
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [aspect, setAspect] = useState(null); // Start with null for Freeform
-  const [rotation, setRotation] = useState(0);
   const [croppedImage, setCroppedImage] = useState(null);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
@@ -44,7 +43,7 @@ function ICropper() {
 
   const handleCrop = async () => {
     try {
-      const croppedImg = await getCroppedImg(image, croppedAreaPixels, rotation, imageDimensions);
+      const croppedImg = await getCroppedImg(image, croppedAreaPixels, 0, imageDimensions); //rotation set to 0
       setCroppedImage(croppedImg);
     } catch (error) {
       console.error(error);
@@ -75,7 +74,7 @@ function ICropper() {
                 image={image}
                 crop={crop}
                 zoom={zoom}
-                rotation={rotation}
+                rotation={0} //rotation set to 0
                 aspect={aspect} // If aspect is null, cropping will be freeform
                 onCropChange={setCrop}
                 onZoomChange={setZoom}

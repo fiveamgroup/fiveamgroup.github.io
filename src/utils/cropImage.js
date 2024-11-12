@@ -1,5 +1,3 @@
-import { createImage } from 'canvas-to-blob';
-
 export const getCroppedImg = (imageSrc, crop, rotation, imageDimensions) =>
   new Promise((resolve, reject) => {
     const image = new Image();

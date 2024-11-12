@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Add this line
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles.css';
 import Resizer from './pages/Resizer';
@@ -8,6 +8,7 @@ import Converter from './pages/Converter';
 import ICropper from './pages/ICropper';
 import Homepage from './components/Homepage';
 import ExifViewer from './pages/ExifViewer';
+import ColorPicker from './pages/ColorPicker';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/converter" element={<Converter />} />
         <Route path="/icropper" element={<ICropper />} />
         <Route path="/exifviewer" element={<ExifViewer />} />
+        <Route path="/colorpicker" element={<ColorPicker />} />
       </Routes>
     </div>
   </Router>
