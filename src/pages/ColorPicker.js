@@ -1,4 +1,3 @@
-// ColorPicker.js
 import React, { useState, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -6,46 +5,50 @@ import Footer from '../components/Footer';
 function ColorPicker() {
   const [image, setImage] = useState(null);
   const [color, setColor] = useState(null);
-  const [zoom, setZoom] = useState(1); // State for zoom level
+  const [zoom, setZoom] = useState(1);
   const imageRef = useRef(null);
 
-  // Handle image upload and reset state
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
       setImage(URL.createObjectURL(file));
       setColor(null);
-      setZoom(1); // Reset zoom when a new image is uploaded
+      setZoom(1);
     }
   };
 
-  // Convert RGB to HEX
   const rgbToHex = (r, g, b) => {
     const hex = (x) => x.toString(16).padStart(2, '0');
     return `#${hex(r)}${hex(g)}${hex(b)}`;
   };
 
-  // Handle click to pick color
   const handleImageClick = (e) => {
+    if (!imageRef.current) return; // Handle case where image is not loaded
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const img = imageRef.current;
 
-    // Adjust the canvas size to match the original image
     canvas.width = img.naturalWidth;
     canvas.height = img.naturalHeight;
     ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight);
 
-    // Calculate coordinates for color picking based on zoom
-    const rect = img.getBoundingClientRect();
-    const x = (e.clientX - rect.left) * (img.naturalWidth / rect.width);
-    const y = (e.clientY - rect.top) * (img.naturalHeight / rect.height);
+    const rect = imageRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / zoom;
+    const y = (e.clientY - rect.top) / zoom;
 
-    const { data } = ctx.getImageData(x, y, 1, 1);
-    const [r, g, b] = data;
-    const hex = rgbToHex(r, g, b);
+    const pixelX = Math.floor(x * (img.naturalWidth / rect.width));
+    const pixelY = Math.floor(y * (img.naturalHeight / rect.height));
 
-    setColor({ rgb: `rgb(${r}, ${g}, ${b})`, hex });
+    if (pixelX >= 0 && pixelX < img.naturalWidth && pixelY >= 0 && pixelY < img.naturalHeight) {
+        const { data } = ctx.getImageData(pixelX, pixelY, 1, 1);
+        const [r, g, b] = data;
+        const hex = rgbToHex(r, g, b);
+        setColor({ rgb: `rgb(${r}, ${g}, ${b})`, hex });
+    } else {
+        setColor(null); // Handle clicks outside the image
+        console.log("Click outside image");
+    }
   };
 
   return (
@@ -53,8 +56,6 @@ function ColorPicker() {
       <Header />
       <div className="content-container">
         <h2>Image Color Picker</h2>
-
-        {/* Image Upload Section */}
         <label htmlFor="file-upload" className="file-label">Upload Image</label>
         <input
           id="file-upload"
@@ -62,8 +63,6 @@ function ColorPicker() {
           accept="image/*"
           onChange={handleImageUpload}
         />
-
-        {/* Zoom Slider */}
         {image && (
           <div className="zoom-container">
             <label htmlFor="zoom-slider" className="zoom-label">Zoom:</label>
@@ -79,8 +78,6 @@ function ColorPicker() {
             />
           </div>
         )}
-
-        {/* Image Preview with Zoom and Click Event */}
         {image && (
           <div className="image-container">
             <img
@@ -89,12 +86,10 @@ function ColorPicker() {
               className="image-preview"
               ref={imageRef}
               onClick={handleImageClick}
-              style={{ transform: `scale(${zoom})` }} // Apply zoom
+              style={{ transform: `scale(${zoom})` }}
             />
           </div>
         )}
-
-        {/* Display Selected Color */}
         {color && (
           <div className="color-info">
             <div
