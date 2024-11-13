@@ -69,6 +69,15 @@ function MainContent() {
             </div>
           </div>
         </div>
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">Video To Gif</h5>
+              <p className="card-text">Convert videos to gifs.</p>
+              <Link to="/video-to-gif" className="btn btn-primary">Go to Video To Gif</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -10,6 +10,8 @@ import Homepage from './components/Homepage';
 import ExifViewer from './pages/ExifViewer';
 import ColorPicker from './pages/ColorPicker';
 import ImageEditor from './pages/ImageEditor'; 
+import VideoToGif from './pages/VideoToGif';
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
         <Route path="/exifviewer" element={<ExifViewer />} />
         <Route path="/colorpicker" element={<ColorPicker />} />
         <Route path="/imageeditor" element={<ImageEditor />} /> 
+        <Route path="/video-to-gif" element={<VideoToGif />} />
       </Routes>
     </div>
   </Router>
