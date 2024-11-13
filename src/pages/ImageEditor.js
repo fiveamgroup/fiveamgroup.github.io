@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import Cropper from 'react-cropper';
 import 'cropperjs/dist/cropper.css';
-
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 function ImageEditor() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [croppedImage, setCroppedImage] = useState(null);
@@ -94,8 +95,31 @@ function ImageEditor() {
     }
   };
 
+  const getFilteredImage = () => {
+    if (selectedImage) {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.src = selectedImage;
+      img.onload = () => {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.filter = getFilterStyle().filter || 'none';
+        ctx.drawImage(img, 0, 0);
+        // Update selectedImage with the filtered image
+        setSelectedImage(canvas.toDataURL()); 
+      };
+    }
+  };
+
+  // Call getFilteredImage whenever filter changes
+  React.useEffect(() => {
+    getFilteredImage();
+  }, [filter, saturation, contrast, brightness]); 
+
   return (
     <div className="tool-page">
+       <Header />
       <div className="content-container">
         <h2>Image Editor</h2>
         <input type="file" id="imageUpload" onChange={handleImageChange} />
@@ -214,6 +238,7 @@ function ImageEditor() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
