@@ -9,6 +9,7 @@ import ICropper from './pages/ICropper';
 import Homepage from './components/Homepage';
 import ExifViewer from './pages/ExifViewer';
 import ColorPicker from './pages/ColorPicker';
+import ImageEditor from './pages/ImageEditor'; // Import ImageEditor
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/icropper" element={<ICropper />} />
         <Route path="/exifviewer" element={<ExifViewer />} />
         <Route path="/colorpicker" element={<ColorPicker />} />
+        <Route path="/imageeditor" element={<ImageEditor />} /> {/* Add route for ImageEditor */}
       </Routes>
     </div>
   </Router>

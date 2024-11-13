@@ -60,6 +60,15 @@ function MainContent() {
             </div>
           </div>
         </div>
+        <div className="col-md-4"> {/* New card for Image Editor */}
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">Image Editor</h5>
+              <p className="card-text">Edit your images with various tools.</p>
+              <Link to="/imageeditor" className="btn btn-primary">Go to Image Editor</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
