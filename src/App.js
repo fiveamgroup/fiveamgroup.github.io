@@ -5,12 +5,11 @@ import './styles.css';
 import Resizer from './pages/Resizer';
 import Compressor from './pages/Compressor';
 import Converter from './pages/Converter';
-import ICropper from './pages/ICropper';
+import ICropper from './pages/ImageCropper';
 import Homepage from './components/Homepage';
 import ExifViewer from './pages/ExifViewer';
 import ColorPicker from './pages/ColorPicker';
-import ImageEditor from './pages/ImageEditor'; // Import ImageEditor
-
+import ImageEditor from './pages/ImageEditor'; 
 function App() {
   return (
     <Router>
@@ -23,7 +22,7 @@ function App() {
         <Route path="/icropper" element={<ICropper />} />
         <Route path="/exifviewer" element={<ExifViewer />} />
         <Route path="/colorpicker" element={<ColorPicker />} />
-        <Route path="/imageeditor" element={<ImageEditor />} /> {/* Add route for ImageEditor */}
+        <Route path="/imageeditor" element={<ImageEditor />} /> 
       </Routes>
     </div>
   </Router>

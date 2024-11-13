@@ -10,7 +10,7 @@ function MainContent() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Image Resizer</h5>
-              <p className="card-text">Resize your images to custom dimensions.</p>
+              <p className="card-text">Resize your images to custom dimensions</p>
               <Link to="/resizer" className="btn btn-primary">Go to Resizer</Link>
             </div>
           </div>
@@ -19,7 +19,7 @@ function MainContent() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Image Compressor</h5>
-              <p className="card-text">Compress images to reduce file size.</p>
+              <p className="card-text">Compress images to reduce file size</p>
               <Link to="/compressor" className="btn btn-primary">Go to Compressor</Link>
             </div>
           </div>
@@ -28,7 +28,7 @@ function MainContent() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Image Converter</h5>
-              <p className="card-text">Convert images to different formats.</p>
+              <p className="card-text">Convert images to different formats</p>
               <Link to="/converter" className="btn btn-primary">Go to Converter</Link>
             </div>
           </div>
@@ -37,8 +37,8 @@ function MainContent() {
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Image Cropper</h5>
-              <p className="card-text">Crop images [coming soon] </p>
-              <Link to="/" className="btn btn-primary">Go to Cropper</Link>
+              <p className="card-text">Crop images to custom dimensions </p>
+              <Link to="/icropper" className="btn btn-primary">Go to Cropper</Link>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ function MainContent() {
             </div>
           </div>
         </div>
-        <div className="col-md-4"> {/* New card for Image Editor */}
+        <div className="col-md-4"> 
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Image Editor</h5>

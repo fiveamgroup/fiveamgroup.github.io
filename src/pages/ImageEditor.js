@@ -3,8 +3,10 @@ import Cropper from 'react-cropper';
 import 'cropperjs/dist/cropper.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
 function ImageEditor() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [originalImage, setOriginalImage] = useState(null); // Store original image
   const [croppedImage, setCroppedImage] = useState(null);
   const [rotation, setRotation] = useState(0);
   const [saturation, setSaturation] = useState(1);
@@ -18,7 +20,9 @@ function ImageEditor() {
     const reader = new FileReader();
 
     reader.onloadend = () => {
-      setSelectedImage(reader.result);
+      const imageData = reader.result;
+      setSelectedImage(imageData);
+      setOriginalImage(imageData); // Store original image
     };
 
     if (file) {
@@ -28,7 +32,7 @@ function ImageEditor() {
 
   const handleRotate = () => {
     setRotation((prevRotation) => (prevRotation + 90) % 360);
-    if (cropperRef.current  && cropperRef.current.cropper) {
+    if (cropperRef.current && cropperRef.current.cropper) {
       cropperRef.current.cropper.rotate(90); // Use cropper.rotate
     }
   };
@@ -107,7 +111,7 @@ function ImageEditor() {
         ctx.filter = getFilterStyle().filter || 'none';
         ctx.drawImage(img, 0, 0);
         // Update selectedImage with the filtered image
-        setSelectedImage(canvas.toDataURL()); 
+        setSelectedImage(canvas.toDataURL());
       };
     }
   };
@@ -115,19 +119,30 @@ function ImageEditor() {
   // Call getFilteredImage whenever filter changes
   React.useEffect(() => {
     getFilteredImage();
-  }, [filter, saturation, contrast, brightness]); 
+  }, [filter, saturation, contrast, brightness]);
 
   return (
     <div className="tool-page">
-       <Header />
+      <Header />
       <div className="content-container">
         <h2>Image Editor</h2>
         <input type="file" id="imageUpload" onChange={handleImageChange} />
-        <label htmlFor="imageUpload" className="file-label">Choose Image</label>
+        <label htmlFor="imageUpload" className="file-label">
+          Choose Image
+        </label>
 
         {selectedImage && (
           <div>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '400px', marginTop: '20px' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '400px',
+                marginTop: '20px',
+              }}
+            >
               <Cropper
                 src={selectedImage}
                 style={{ height: '100%', width: '100%', maxWidth: '500px' }}
@@ -153,25 +168,50 @@ function ImageEditor() {
                 Download
               </button>
 
-              <button className="action-button" onClick={() => handleFilterChange('grayscale')}>
+              <button
+                className="action-button"
+                onClick={() => handleFilterChange('grayscale')}
+              >
                 Grayscale
               </button>
-              <button className="action-button" onClick={() => handleFilterChange('sepia')}>
+              <button
+                className="action-button"
+                onClick={() => handleFilterChange('sepia')}
+              >
                 Sepia
               </button>
-              <button className="action-button" onClick={() => handleFilterChange('invert')}>
+              <button
+                className="action-button"
+                onClick={() => handleFilterChange('invert')}
+              >
                 Invert
               </button>
-              <button className="action-button" onClick={() => handleFilterChange('blur')}>
+              <button
+                className="action-button"
+                onClick={() => handleFilterChange('blur')}
+              >
                 Blur
               </button>
-              <button className="action-button" onClick={() => handleFilterChange('sharpen')}>
+              <button
+                className="action-button"
+                onClick={() => handleFilterChange('sharpen')}
+              >
                 Sharpen
               </button>
-              <button className="action-button" onClick={() => handleFilterChange('vintage')}>
+              <button
+                className="action-button"
+                onClick={() => handleFilterChange('vintage')}
+              >
                 Vintage
               </button>
-              <button className="action-button" onClick={() => handleFilterChange(null)}>
+              <button
+                className="action-button"
+                onClick={() => {
+                  handleFilterChange(null);
+                  setCroppedImage(null); // Reset cropped image to original
+                  setSelectedImage(originalImage); // Reset to the original image
+                }}
+              >
                 None
               </button>
             </div>
@@ -225,7 +265,15 @@ function ImageEditor() {
             </div>
 
             {croppedImage && (
-              <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+              <div
+                style={{
+                  marginTop: '20px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                }}
+              >
                 <h3 style={{ textAlign: 'center' }}>Cropped Image:</h3>
                 <img
                   src={croppedImage}
@@ -233,6 +281,9 @@ function ImageEditor() {
                   className="preview-image"
                   style={getFilterStyle()}
                 />
+                <button className="action-button" onClick={handleDownload}>
+                  Download
+                </button>
               </div>
             )}
           </div>
