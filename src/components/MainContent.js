@@ -69,6 +69,15 @@ function MainContent() {
             </div>
           </div>
         </div>
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">QR Code Generator</h5>
+              <p className="card-text">Generate QR codes for various purposes</p>
+              <Link to="/qrcode" className="btn btn-primary"> Go to QR code generator</Link>
+            </div>
+          </div>
+        </div>
         {/* 
         <div className="col-md-4">
           <div className="card">

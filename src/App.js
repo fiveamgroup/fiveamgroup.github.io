@@ -12,6 +12,7 @@ import ColorPicker from './pages/ColorPicker';
 import ImageEditor from './pages/ImageEditor'; 
 import VideoToGif from './pages/VideoToGif';
 import Mp4ToMp3 from './pages/Mp4ToMp3';
+import QrCode from './pages/QrCode';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/imageeditor" element={<ImageEditor />} /> 
         <Route path="/video-to-gif" element={<VideoToGif />} />
         <Route path="/mp4-to-mp3" element={<Mp4ToMp3 />} />
+        <Route path="/qrcode" element={<QrCode />} />
       </Routes>
     </div>
   </Router>
